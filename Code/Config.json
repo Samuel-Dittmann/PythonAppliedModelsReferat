@@ -1,0 +1,12 @@
+{
+    "dataPath":"/Users/samueldittmann/Desktop/Referat/Datenquellen",
+    "filterCountries":[
+        "FORMER GERMAN DEMOCRATIC REPUBLIC",
+        "FEDERAL REPUBLIC OF GERMANY"
+    ],
+    "filterSource":[
+        "GISTEMP"
+    ],
+    "zScoreThreshold":3,
+    "resultPath": "/Users/samueldittmann/Desktop/Referat/Results"
+}
