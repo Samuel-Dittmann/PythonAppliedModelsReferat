@@ -5,7 +5,7 @@ from scipy.stats import zscore
 import matplotlib.pyplot as plt
 
 def readConfig():
-    with open('Config.json') as config_file: #Config Datei lesen
+    with open('Code/Config.json') as config_file: #Config Datei lesen
         c = json.load(config_file)
         return c
 
@@ -30,13 +30,12 @@ def loadData(resultPath):
     temperatureSourceYear = temperatureSource.groupby(['Year']).mean() #Arithmetisches Mittel der Temperature pro Jahr
     temperatureFinal = temperatureSourceYear["Mean"] #Spalte isolieren
 
-    concatenatedTable = pd.concat([co2emissionsFinal, temperatureFinal], axis=1)
+    concatenatedTable = pd.concat([co2emissionsFinal, temperatureFinal], join='inner', axis=1)
     concatenatedTable.rename(columns={"Total": 'co2emissions', "Mean": 'temperature'}, inplace=True)
     concatenatedTable.dropna(inplace=True)
 
     concatZScore = concatenatedTable.apply(lambda x: zscore(x))
     concatZScore = concatZScore < c["zScoreThreshold"]
-
 
     concatFlats = concatenatedTable.copy()
     concatFlats['co2FlatValue'] = concatFlats.co2emissions - concatFlats.co2emissions.shift()
@@ -49,6 +48,7 @@ def loadData(resultPath):
     concatenatedTableWOOutliers = concatenatedTable[concatZScore] #Filter nach Z-Score
     concatenatedTableWOOutliers = concatenatedTableWOOutliers[concatFlats] #Filter nach Flats
     concatenatedTableWOOutliers = concatenatedTableWOOutliers.dropna()
+    concatenatedTableWOOutliers = concatenatedTableWOOutliers[(concatenatedTableWOOutliers.temperature>-1)&(concatenatedTableWOOutliers.temperature<1)] #Ausreißer bei Temperatur entfernen (nur -1 bis 0)
 
     print(str(len(concatenatedTable) - len(concatenatedTableWOOutliers))+" Outliers were removed")
 
