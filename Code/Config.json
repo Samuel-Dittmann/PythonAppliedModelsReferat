@@ -1,5 +1,5 @@
 {
-    "dataPath":"/Users/samueldittmann/Desktop/Referat/Datenquellen",
+    "dataPath":"C:/Users/Franck Ngami/Desktop/Referat/PythonAppliedModelsReferat/Datenquellen",
     "filterCountries":[
         "FORMER GERMAN DEMOCRATIC REPUBLIC",
         "FEDERAL REPUBLIC OF GERMANY"
@@ -8,5 +8,5 @@
         "GISTEMP"
     ],
     "zScoreThreshold":3,
-    "resultPath": "/Users/samueldittmann/Desktop/Referat/Results"
+    "resultPath": "C:/Users/Franck Ngami/Desktop/Referat/PythonAppliedModelsReferat/Results"
 }
