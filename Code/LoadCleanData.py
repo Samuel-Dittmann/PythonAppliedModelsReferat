@@ -5,7 +5,7 @@ from scipy.stats import zscore
 import matplotlib.pyplot as plt
 
 def readConfig():
-    with open('Config.json') as config_file: #Config Datei lesen
+    with open('Code/Config.json') as config_file: #Config Datei lesen
         c = json.load(config_file)
         return c
 
@@ -63,8 +63,8 @@ def loadData(resultPath):
     ax1.set_xlabel('Jahre')
     ax1.set_ylabel('CO2 Emissionen', color='g')
     ax2.set_ylabel('Durschnittstemperatur', color='b')
-    plt.show()
     plt.savefig(resultPath+"/Visualisierung.png")
+    plt.show()
 
     return concatenatedTableWOOutliers
 
