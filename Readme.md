@@ -8,3 +8,9 @@ In dieser Datei können auch alle weiteren Parameter bearbeitet werden. Diese si
 - scipy
 - pandas
 - matplotlib
+- statsmodels
+
+## Bekannte Fehler:
+In der Datei "Code/LoadCleanData.py" wird in der Fuktion "ReadConfig" auf die Konfigurationsdatei verwiesen. </br>
+Unter MacOSX muss hier 'Code/Config.json' stehen und unter Windows 'Config.json'. </br>
+Ist das nicht richtig Konfiguriert, wird ein Fehler ausgegeben!
