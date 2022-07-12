@@ -2,7 +2,8 @@
     "dataPath":"C:/Users/Franck Ngami/Desktop/Referat/PythonAppliedModelsReferat/Datenquellen",
     "filterCountries":[
         "FORMER GERMAN DEMOCRATIC REPUBLIC",
-        "FEDERAL REPUBLIC OF GERMANY"
+        "FEDERAL REPUBLIC OF GERMANY",
+        "GERMANY"
     ],
     "filterSource":[
         "GISTEMP"
