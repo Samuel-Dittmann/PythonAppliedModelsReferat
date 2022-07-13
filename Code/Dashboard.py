@@ -1,4 +1,5 @@
 import LoadCleanData as LCD
+import Config as cfg
 
 import os
 from datetime import datetime
@@ -38,7 +39,7 @@ def create_regression_graph(regression_obj, title):
     plt.show()
 
 
-c = LCD.readConfig() #Die Config wird hier eingelesen und kann mit c["Attributsname"] verwendet werden
+c = cfg.readConfig() #Die Config wird hier eingelesen und kann mit c["Attributsname"] verwendet werden
 currDateTime = datetime.now()
 runPath = c['resultPath']+"/Run "+str(currDateTime.strftime("%Y-%m-%d %H-%M-%S.%f"))[:-3] #Hier wird der Run Path festgelegt aus dem Config-Pfad und der aktuellen DateTime
 
